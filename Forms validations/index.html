@@ -1,0 +1,89 @@
+<html>   
+   <head>
+      <title> Validation</title>      
+      <script type = "text/javascript">
+       
+          
+           function validate() {
+           
+              if( document.myForm.Name.value == "" ) {
+                 alert( "Please write your name!" );
+                 document.myForm.Name.focus() ;
+                 return false;  }
+             
+              if( document.myForm.adress.value == "" ) {
+                 alert( "Please write your adress!" );
+                 document.myForm.adress.focus() ;
+                 return false;
+              }
+              if( document.myForm.EMail.value == "" ) {
+                 alert( "Please write your Email!" );
+                 document.myForm.EMail.focus() ;
+                 return false;
+              }
+              
+                 if( document.myForm.password.value.length<8 ) {
+                 alert( "Please write your password!" );
+                 document.myForm.password.focus() ;
+                 return false;
+              }
+            
+            
+              var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+if(document.myForm.password.value.match(passw)) 
+{ 
+alert('Correct password ')
+return true;
+}
+else
+{ 
+alert(' please your password must stat with an Uppercase and you must have a number...!')
+return false;
+}
+
+
+
+
+
+
+
+              if( document.myForm.texta.value =="" ) {
+                 alert( "Please write your coment" );
+                 document.myForm.texta.focus() ;
+                 return false;
+              }
+             
+              
+              return( true );
+           }
+           
+     </script> 
+      <style>
+        .b{width:150px; height:25px; opacity: 0.6; border-radius: 4px; }
+        .univers{background-image: url(univers.jpg);}
+        .t{background-color: rgb(201, 197, 201); border-radius: 4px; color: rgb(114, 18, 114); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+        .style1{background-image: url("univers.jpg" );font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(177, 169, 169); width:300px ; padding-top: 30px; opacity: 0.9;}
+    </style>   
+   </head>
+   
+   <body>
+      <div class="univers">
+      <div >
+       <center>
+      <form class="style1" action = "" name = "myForm" onsubmit = "return(validate());">
+       
+             Name <input class="T" type = "text" name = "Name" placeholder="your name" /><br><br>
+             Adress<input class="T" type = "text" name = "adress" placeholder="your adres" /><br><br>
+             Email <input class="T" type = "text" name = "EMail" placeholder="your email"/><br><br>
+          Password<input class="T" type = "password" name = "password"placeholder="your password" /><br><br>
+          comment<textarea class="T" name="texta" placeholder="write your comment"></textarea><br><br>
+          <div>   <input class="b" type = "submit"  value = "send" /> </div> 
+             <br>
+         <div>    <input class="b" type = "reset" value="Reset" /> </div>
+        </center>
+            
+      </div> 
+   </div> 
+      </form>      
+   </body>
+</html>
